@@ -1,6 +1,4 @@
-# AutoPost GPT
-
-AI 驱动的自动内容生成与发布工具 - 使用 ChatGPT/DALL-E 自动生成高质量中文文章并发布到 WordPress
+# AutoPost GPT AI驱动的自动内容生成与发布工具 - 使用 ChatGPT/DALL-E自动生成高质量中文文章并发布到WordPress
 
 ## ✨ 功能特点
 
