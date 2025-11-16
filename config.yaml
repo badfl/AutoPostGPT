@@ -1,0 +1,49 @@
+# AutoPost GPT 配置文件
+
+# OpenAI 设置
+openai_model: "gpt-4o-mini" #示例：gpt-5.1、claude-3-sonnet-20240229，可以查看https://api.whatai.cc/models，查看具体支持的模型
+
+# 生成设置
+title_per_keyword: 2                # 每个关键词生成标题数量
+delay_between_posts: 60             # 每篇文章间隔（秒）
+word_count: 2000                    # 文章字数
+image_count: 1                      # 文章中的图片数量
+
+# 模板设置
+use_template: false                 # 是否使用文章模板（true/false）
+article_template: |                 # 文章模板（仅当 use_template 为 true 时使用）
+  <h2>引言</h2>
+  <p>{intro}</p>
+  <h2>主要内容</h2>
+  <p>{body}</p>
+  <h2>结语</h2>
+  <p>{conclusion}</p>
+
+# SEO 和内容过滤设置
+forbidden_words:                    # 禁止在标题和文章中出现的词汇
+  - "违禁词示例"
+  - "敏感词示例"
+  # 在这里添加更多不允许出现的词
+
+# 图片设置
+image_mode: "generate"                # 图片获取模式：search（搜索互联网图片）, generate（AI生成图片）, mixed（混合模式）
+fetch_real_images: true             # 是否从互联网检索真实图片（true 使用真实图片，false 使用占位符）
+image_search_engine: "unsplash"     # 图片搜索引擎：picsum（免费可靠）, unsplash, pexels, pixabay
+image_generate_model: "dall-e-3"    # AI 图片生成模型：dall-e-2、dall-e-3、nano-banana，可以查看https://api.whatai.cc/models，查看具体支持的模型
+image_generate_size: "1024x1024"    # 生成图片尺寸：dall-e-2 支持 256x256/512x512/1024x1024，dall-e-3 支持 1024x1024/1792x1024/1024x1792
+image_generate_quality: "standard"  # 生成图片质量：standard（标准）, hd（高清，仅 dall-e-3）
+image_generate_style: "natural"     # 生成图片风格：vivid（鲜艳）, natural（自然，仅 dall-e-3）
+
+# 保存设置
+save_path: "./output"               # 本地保存路径
+save_mode: "keyword"                # 分类方式：keyword 或 date
+
+# WordPress 发布设置（可选）
+wordpress:
+  enabled: flase
+  api_method: "xmlrpc"              # 发布方式：auto（自动选择）, rest（REST API）, xmlrpc（XML-RPC）
+  url: "https://xxxx.com/xmlrpc.php"
+  username: "admin"
+  password: "1234567890"
+  category: ""                      # 留空则随机选择分类，填写具体分类名则发布到指定分类（如："AI资讯"）
+  status: "draft"                   # draft 或 publish
